@@ -34,6 +34,27 @@ void Sudoku::giveQuestion()
 					{0,0,0,4,1,9,0,0,5},
 					{0,0,0,0,8,0,0,7,9}
 					};
+	srand(time(NULL));
+	for(i=0;i<9;i++)
+	{
+		for(j=0;j<9;j++)
+		{
+			sudo[i][j]=give[i][j];
+		}
+	}
+	changeNum(rand()%9+1, rand()%9+1);
+	changeRow(rand()%3, rand()%3);
+	changeCol(rand()%3, rand()%3);
+	rotate(rand()%101);
+	flip(rand()%2);
+	for(i=0;i<9;i++)
+	{
+		for(j=0;j<9;j++)
+		{
+			give[i][j]=sudo[i][j];
+			sudo[i][j]=0;
+		}
+	}
 	for(i=0;i<9;i++)
 	{
 		for(j=0;j<9;j++)
