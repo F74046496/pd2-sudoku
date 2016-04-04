@@ -6,7 +6,6 @@ public:
 	Sudoku();
 	void giveQuestion();
 	void readIn();
-	//void preview();
 	void solve();
 	void changeNum(int a, int b);
 	void changeRow(int a, int b);
@@ -15,8 +14,9 @@ public:
 	void flip(int n);
 	void transform();
 private:
-	//bool solve;
+	bool unsolvable;
+	int times;
 	int ans;
-	int zeroNum;
 	int sudo[9][9];
+	int ansBoard[9][9];
 };
